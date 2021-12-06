@@ -17,10 +17,10 @@ library(lme4)
 library(lmerTest)
 
 #get the data  ------------------------------------------------
-df <-read_qualtrics("2020_ta_fake_data.csv")
-df <-read_csv(here::here("simulated","2020_ta_fake_data.csv"))
+df <-read_qualtrics(here::here("data", "2020_thinkagain_raw.csv"))
+
 #metadata rename
-meta <- read_csv("metadata_2020_thinkagain.csv")
+meta <- read_csv(here::here("data", "metadata_2020_thinkagain.csv"))
 df <-  meta_rename(df, meta, old = name_raw, new = name_clean)
 
 # data cleaning -----------------------------------------------
